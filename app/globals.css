@@ -1,0 +1,318 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* ── shadcn tokens ── */
+  --color-background:              var(--background);
+  --color-foreground:              var(--foreground);
+  --color-card:                    var(--card);
+  --color-card-foreground:         var(--card-foreground);
+  --color-popover:                 var(--popover);
+  --color-popover-foreground:      var(--popover-foreground);
+  --color-primary:                 var(--primary);
+  --color-primary-foreground:      var(--primary-foreground);
+  --color-secondary:               var(--secondary);
+  --color-secondary-foreground:    var(--secondary-foreground);
+  --color-muted:                   var(--muted);
+  --color-muted-foreground:        var(--muted-foreground);
+  --color-accent:                  var(--accent);
+  --color-accent-foreground:       var(--accent-foreground);
+  --color-destructive:             var(--destructive);
+  --color-border:                  var(--border);
+  --color-input:                   var(--input);
+  --color-ring:                    var(--ring);
+
+  --radius-sm:  calc(var(--radius) * 0.6);
+  --radius-md:  calc(var(--radius) * 0.8);
+  --radius-lg:  var(--radius);
+  --radius-xl:  calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+
+  /* ── King Aqua Lounge couleurs ── */
+  --color-gold:          oklch(72% 0.135 78);    /* #C9A84C */
+  --color-gold-light:    oklch(82% 0.135 78);    /* #E8C97A */
+  --color-gold-dark:     oklch(54% 0.12 72);     /* #A0722A */
+  --color-cream:         oklch(97.5% 0.008 85);  /* #FAF7F2 */
+  --color-dark:          oklch(8.5% 0 0);        /* #0d0d0d */
+  --color-dark-card:     oklch(12% 0 0);         /* #1a1a1a */
+  --color-text-muted-kal: oklch(45% 0.02 60);   /* #6B6055 */
+
+  /* ── Fonts ── */
+  --font-playfair: 'Playfair Display';
+  --font-raleway:  'Raleway';
+  --font-sans:  var(--font-raleway), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), 'Georgia', serif;
+  --font-mono:  ui-monospace, monospace;
+}
+
+/* ── Thème clair (sections blanches/crème) ── */
+:root {
+  --background:         oklch(97.5% 0.008 85);  /* cream */
+  --foreground:         oklch(12% 0.005 60);     /* near-black */
+  --card:               oklch(1 0 0);            /* white */
+  --card-foreground:    oklch(12% 0.005 60);
+  --popover:            oklch(1 0 0);
+  --popover-foreground: oklch(12% 0.005 60);
+  --primary:            oklch(72% 0.135 78);     /* gold */
+  --primary-foreground: oklch(8.5% 0 0);         /* dark */
+  --secondary:          oklch(97.5% 0.008 85);
+  --secondary-foreground: oklch(12% 0.005 60);
+  --muted:              oklch(95% 0.004 80);
+  --muted-foreground:   oklch(45% 0.02 60);      /* #6B6055 */
+  --accent:             oklch(95% 0.015 78);
+  --accent-foreground:  oklch(12% 0.005 60);
+  --destructive:        oklch(0.577 0.245 27.325);
+  --border:             oklch(88% 0.03 78);      /* gold-tinted */
+  --input:              oklch(88% 0.03 78);
+  --ring:               oklch(72% 0.135 78);     /* gold */
+  --radius:             0.5rem;
+}
+
+/* ── Thème dark (hero, navbar, footer) ── */
+.dark {
+  --background:         oklch(8.5% 0 0);         /* #0d0d0d */
+  --foreground:         oklch(95% 0 0);
+  --card:               oklch(12% 0 0);
+  --card-foreground:    oklch(95% 0 0);
+  --popover:            oklch(12% 0 0);
+  --popover-foreground: oklch(95% 0 0);
+  --primary:            oklch(72% 0.135 78);     /* gold */
+  --primary-foreground: oklch(8.5% 0 0);
+  --secondary:          oklch(15% 0 0);
+  --secondary-foreground: oklch(95% 0 0);
+  --muted:              oklch(16% 0 0);
+  --muted-foreground:   oklch(65% 0.01 60);
+  --accent:             oklch(18% 0.02 78);
+  --accent-foreground:  oklch(95% 0 0);
+  --destructive:        oklch(0.704 0.191 22.216);
+  --border:             oklch(1 0 0 / 10%);
+  --input:              oklch(1 0 0 / 12%);
+  --ring:               oklch(72% 0.135 78);
+}
+
+/* ── Base ── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    /* Fond dark comme l'ancienne version #0d0d0d */
+    background-color: oklch(8.5% 0 0);
+    color: oklch(95% 0 0);
+    font-family: var(--font-raleway), ui-sans-serif, sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    color-scheme: dark;
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+}
+
+/* ── Utilitaires personnalisés ── */
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-playfair), 'Georgia', serif;
+  }
+  .section-cream {
+    background-color: var(--color-cream);
+  }
+  .section-dark {
+    background-color: var(--color-dark);
+  }
+  .text-gold {
+    color: var(--color-gold);
+  }
+  .bg-gold {
+    background-color: var(--color-gold);
+  }
+  .border-gold {
+    border-color: var(--color-gold);
+  }
+
+  /* Divider ornement */
+  .divider-gold {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--color-gold);
+  }
+  .divider-gold::before,
+  .divider-gold::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--color-gold);
+    opacity: 0.5;
+  }
+
+  /* Skip link accessibilité */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    background: var(--color-gold);
+    color: var(--color-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    font-weight: 600;
+    z-index: 9999;
+    transition: top 0.2s;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
+
+  /* Particules dorées hero */
+  @keyframes float-particle {
+    0%   { transform: translateY(0) scale(1); opacity: 0.6; }
+    50%  { transform: translateY(-20px) scale(1.2); opacity: 1; }
+    100% { transform: translateY(0) scale(1); opacity: 0.6; }
+  }
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--color-gold);
+    animation: float-particle ease-in-out infinite;
+  }
+
+  /* Reveal animation */
+  @keyframes reveal-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .reveal-up {
+    animation: reveal-up 0.6s ease forwards;
+  }
+
+  /* Image card overlay */
+  .img-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+  }
+  .img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .img-card:hover img {
+    transform: scale(1.05);
+  }
+  .img-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .img-card:hover .img-card-overlay {
+    opacity: 1;
+  }
+
+  /* ── Background Marlboro-Gold style ── */
+
+  /* Hero : point focal légèrement à gauche, rayons en éventail */
+  .gold-bg {
+    background:
+      radial-gradient(ellipse 70% 55% at 38% 45%,
+        rgba(201,168,76,0.20) 0%,
+        rgba(201,168,76,0.07) 42%,
+        transparent 68%),
+      conic-gradient(from -15deg at 38% 45%,
+        transparent 0deg,
+        rgba(201,168,76,0.045) 7deg,
+        transparent 14deg,
+        rgba(201,168,76,0.03) 21deg,
+        transparent 28deg,
+        rgba(201,168,76,0.055) 35deg,
+        transparent 42deg,
+        rgba(201,168,76,0.025) 49deg,
+        transparent 56deg,
+        transparent 304deg,
+        rgba(201,168,76,0.03) 311deg,
+        transparent 318deg,
+        rgba(201,168,76,0.045) 325deg,
+        transparent 332deg,
+        rgba(201,168,76,0.03) 339deg,
+        transparent 346deg,
+        rgba(201,168,76,0.04) 353deg,
+        transparent 360deg),
+      radial-gradient(ellipse 110% 110% at 50% 50%,
+        transparent 38%,
+        rgba(0,0,0,0.65) 100%),
+      oklch(8.5% 0 0);
+  }
+
+  /* Banners (menu, contact) : glow centré */
+  .gold-bg-center {
+    background:
+      radial-gradient(ellipse 90% 130% at 50% 60%,
+        rgba(201,168,76,0.16) 0%,
+        rgba(201,168,76,0.05) 48%,
+        transparent 68%),
+      conic-gradient(from -20deg at 50% 55%,
+        transparent 0deg,
+        rgba(201,168,76,0.04) 9deg,
+        transparent 18deg,
+        rgba(201,168,76,0.03) 27deg,
+        transparent 36deg,
+        rgba(201,168,76,0.045) 45deg,
+        transparent 54deg,
+        transparent 306deg,
+        rgba(201,168,76,0.03) 315deg,
+        transparent 324deg,
+        rgba(201,168,76,0.04) 333deg,
+        transparent 342deg,
+        rgba(201,168,76,0.03) 351deg,
+        transparent 360deg),
+      radial-gradient(ellipse 110% 110% at 50% 50%,
+        transparent 30%,
+        rgba(0,0,0,0.72) 100%),
+      oklch(8.5% 0 0);
+  }
+
+  /* ── Respect prefers-reduced-motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    .particle { animation: none; opacity: 0.35; }
+    .reveal-up { animation: none; opacity: 1; transform: none; }
+  }
+
+  /* FAB flottant */
+  .fab {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: var(--color-gold);
+    color: var(--color-dark);
+    padding: 0.75rem 1.25rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 20px rgba(201,168,76,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+    z-index: 50;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .fab:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(201,168,76,0.5);
+  }
+}
