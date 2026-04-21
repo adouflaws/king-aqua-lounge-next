@@ -45,10 +45,10 @@ const contactInfos = [
     title: 'Email',
     content: (
       <a
-        href="mailto:kingaqualoune1@gmail.com"
+        href="mailto:adouflaws@gmail.com"
         className="text-[var(--color-text-muted-kal)] text-sm hover:text-[var(--color-gold)] transition-colors"
       >
-        kingaqualoune1@gmail.com
+        adouflaws@gmail.com
       </a>
     ),
   },
@@ -76,7 +76,7 @@ export default function ContactPage() {
             '@type': 'Restaurant',
             name: 'King Aqua Lounge',
             telephone: '+223-77-77-74-77',
-            email: 'kingaqualoune1@gmail.com',
+            email: 'adouflaws@gmail.com',
             url: 'https://www.king-aqualounge.com',
             address: {
               '@type': 'PostalAddress',

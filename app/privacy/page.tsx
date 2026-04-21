@@ -41,7 +41,7 @@ export default function PrivacyPage() {
             <p>
               <strong>King Aqua Lounge</strong><br />
               Baco-Djicoroni, Bamako, Mali<br />
-              Email : <a href="mailto:kingaqualoune1@gmail.com" className="text-[var(--color-gold)]">kingaqualoune1@gmail.com</a>
+              Email : <a href="mailto:adouflaws@gmail.com" className="text-[var(--color-gold)]">adouflaws@gmail.com</a>
             </p>
           </div>
 
@@ -81,8 +81,8 @@ export default function PrivacyPage() {
             <h2 className="font-serif text-2xl text-[oklch(12%_0.005_60)] mb-4">Vos droits</h2>
             <p>
               Conformément à la réglementation applicable, vous disposez d&apos;un droit d&apos;accès, de rectification et de suppression de vos données personnelles. Pour exercer ces droits, contactez-nous à{' '}
-              <a href="mailto:kingaqualoune1@gmail.com" className="text-[var(--color-gold)]">
-                kingaqualoune1@gmail.com
+              <a href="mailto:adouflaws@gmail.com" className="text-[var(--color-gold)]">
+                adouflaws@gmail.com
               </a>.
             </p>
           </div>

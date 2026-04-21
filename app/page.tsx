@@ -30,7 +30,7 @@ export default function HomePage() {
               'Activités et restaurant à Bamako : billard, jet ski, balade en bateau et grillades au bord du fleuve Niger à Baco-Djicoroni. La meilleure sortie loisirs à Bamako.',
             url: 'https://www.king-aqualounge.com',
             telephone: '+223-77-77-74-77',
-            email: 'kingaqualoune1@gmail.com',
+            email: 'adouflaws@gmail.com',
             address: {
               '@type': 'PostalAddress',
               streetAddress: 'Baco-Djicoroni',
@@ -103,7 +103,7 @@ export default function HomePage() {
                 name: 'Comment réserver une table ou une activité au King Aqua Lounge ?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Vous pouvez réserver en appelant le +223 77 77 74 77, par email à kingaqualoune1@gmail.com, ou via le formulaire de contact sur notre site.',
+                  text: 'Vous pouvez réserver en appelant le +223 77 77 74 77, par email à adouflaws@gmail.com, ou via le formulaire de contact sur notre site.',
                 },
               },
               {

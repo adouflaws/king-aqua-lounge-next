@@ -42,7 +42,7 @@ export default function LegalPage() {
               <strong>King Aqua Lounge</strong><br />
               Baco-Djicoroni, Bamako, Mali<br />
               Téléphone : <a href="tel:+22377777477" className="text-[var(--color-gold)]">+223 77 77 74 77</a><br />
-              Email : <a href="mailto:kingaqualoune1@gmail.com" className="text-[var(--color-gold)]">kingaqualoune1@gmail.com</a>
+              Email : <a href="mailto:adouflaws@gmail.com" className="text-[var(--color-gold)]">adouflaws@gmail.com</a>
             </p>
           </div>
 

@@ -89,10 +89,10 @@ export default function Footer() {
                 +223 77 77 74 77
               </a>
               <a
-                href="mailto:kingaqualoune1@gmail.com"
+                href="mailto:adouflaws@gmail.com"
                 className="hover:text-[var(--color-gold)] transition-colors block"
               >
-                kingaqualoune1@gmail.com
+                adouflaws@gmail.com
               </a>
             </div>
             <a
