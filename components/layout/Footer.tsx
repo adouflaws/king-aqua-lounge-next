@@ -95,15 +95,6 @@ export default function Footer() {
                 adouflaws@gmail.com
               </a>
             </div>
-            <a
-              href="https://search.google.com/local/writereview?placeid=ChIJXxHNUQ7cotoGRynCEA"
-              className="inline-flex items-center gap-1.5 text-xs border border-[var(--color-gold)]/40 text-[var(--color-gold)] px-3 py-1.5 rounded-full hover:bg-[var(--color-gold)]/10 transition-colors duration-200"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Laisser un avis Google pour King Aqua Lounge"
-            >
-              ★ Laisser un avis Google
-            </a>
           </div>
         </div>
 

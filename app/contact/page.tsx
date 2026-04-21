@@ -198,16 +198,6 @@ export default function ContactPage() {
                 >
                   Obtenir l&apos;itinéraire
                 </a>
-                <a
-                  href="https://search.google.com/local/writereview?placeid=ChIJXxHNUQ7cotoGRynCEA"
-                  className="inline-flex items-center gap-2 border border-[var(--color-gold)]/40 text-[var(--color-gold)] px-6 py-3 rounded-full text-xs font-semibold tracking-widest uppercase hover:bg-[var(--color-gold)]/5 transition-[background-color,border-color] duration-200"
-                  style={{ letterSpacing: '0.12em' }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Laisser un avis Google pour King Aqua Lounge"
-                >
-                  ★ Laisser un avis Google
-                </a>
               </div>
             </div>
 
