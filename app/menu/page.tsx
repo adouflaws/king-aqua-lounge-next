@@ -15,8 +15,10 @@ import {
   fastFood,
   desserts,
   boissonsChaudes,
-  mocktails,
-  cocktails,
+  cocktailsClassiques,
+  cocktailsFruites,
+  cocktailsSignature,
+  cocktailsSansAlcool,
   boissons,
 } from '@/lib/data';
 
@@ -342,12 +344,20 @@ export default function MenuPage() {
                 ]} />
                 <div className="flex-1 min-w-0">
                   <h2 className="font-serif text-2xl sm:text-3xl text-white mb-8 lg:hidden">Cocktails &amp; Boissons</h2>
-                  <SubHeader title="Mocktails" />
-                  {mocktails.map((item) => (
+                  <SubHeader title="Cocktails Classiques" />
+                  {cocktailsClassiques.map((item) => (
                     <MenuItemRow key={item.name} {...item} />
                   ))}
-                  <SubHeader title="Cocktails" />
-                  {cocktails.map((item) => (
+                  <SubHeader title="Cocktails Fruités" />
+                  {cocktailsFruites.map((item) => (
+                    <MenuItemRow key={item.name} {...item} />
+                  ))}
+                  <SubHeader title="Cocktails Signature" />
+                  {cocktailsSignature.map((item) => (
+                    <MenuItemRow key={item.name} {...item} />
+                  ))}
+                  <SubHeader title="Cocktails Sans Alcool" />
+                  {cocktailsSansAlcool.map((item) => (
                     <MenuItemRow key={item.name} {...item} />
                   ))}
                   <SubHeader title="Boissons Fraîches" />

@@ -441,74 +441,107 @@ export const boissonsChaudes: MenuItem[] = [
 
 // ─── BOISSONS ─────────────────────────────────────────────────────────────────
 
-export const mocktails: MenuItem[] = [
-  {
-    name: 'Virgin Mojito',
-    description: 'Menthe fraîche, citron vert, eau gazeuse',
-    price: '5 000 F CFA',
-  },
-  {
-    name: 'Virgin Piña',
-    description: 'Ananas, noix de coco, citron vert',
-    price: '5 000 F CFA',
-  },
-  {
-    name: 'Bora Bora',
-    description: 'Fruits exotiques, grenadine, eau gazeuse',
-    price: '5 000 F CFA',
-  },
-  {
-    name: 'Lait de Caïman',
-    description: 'Lait de coco, fruit de la passion, vanille',
-    price: '2 000 F CFA',
-  },
-  {
-    name: 'Tropic King',
-    description: 'Mangue, ananas, citron vert — la signature du King',
-    price: '5 000 F CFA',
-    tag: 'Signature',
-  },
-  {
-    name: 'Punch Exotique',
-    description: 'Mélange de fruits tropicaux, jus d\'agrumes',
-    price: '5 000 F CFA',
-  },
-  {
-    name: 'Happy Day',
-    description: 'Fruits rouges, passion, menthe fraîche',
-    price: '5 000 F CFA',
-  },
-];
-
-export const cocktails: MenuItem[] = [
-  {
-    name: 'Margarita',
-    description: 'Tequila, triple sec, citron vert, sel',
-    price: '6 000 F CFA',
-  },
+export const cocktailsClassiques: MenuItem[] = [
   {
     name: 'Mojito',
     description: 'Rhum blanc, menthe fraîche, citron vert, sucre, eau gazeuse',
-    price: '6 000 F CFA',
+    price: '10 000 F CFA',
   },
   {
-    name: 'Blue Virgin',
-    description: 'Curaçao bleu, citron, eau gazeuse — visuellement spectaculaire',
-    price: '6 000 F CFA',
+    name: 'Piña Colada',
+    description: 'Rhum blanc, crème de coco, jus d\'ananas',
+    price: '10 000 F CFA',
   },
   {
-    name: 'Sauvage',
-    description: 'Rhum vieux, fruits de la passion, gingembre, citron',
-    price: '6 000 F CFA',
+    name: 'Daïquiri',
+    description: 'Rhum blanc, jus de citron vert, sucre de canne',
+    price: '10 000 F CFA',
   },
   {
-    name: 'Matador',
-    description: 'Tequila, jus d\'ananas, citron vert, menthe',
-    price: '6 000 F CFA',
+    name: 'Margarita',
+    description: 'Tequila, triple sec, jus de citron vert, sel',
+    price: '10 000 F CFA',
   },
   {
-    name: 'Jus de Fruit Naturelle',
-    description: 'Pur jus de fruits frais pressés du jour',
+    name: 'Cosmopolitan',
+    description: 'Vodka, triple sec, jus de canneberge, citron vert',
+    price: '10 000 F CFA',
+  },
+];
+
+export const cocktailsFruites: MenuItem[] = [
+  {
+    name: 'Sunset Tropical',
+    description: 'Rhum, jus de mangue, grenadine, citron vert',
+    price: '10 000 F CFA',
+  },
+  {
+    name: 'Passion Dream',
+    description: 'Vodka, fruit de la passion, ananas, citron',
+    price: '10 000 F CFA',
+  },
+  {
+    name: 'Fraise Fresh',
+    description: 'Vodka, purée de fraise, citron vert, sucre de canne',
+    price: '10 000 F CFA',
+  },
+  {
+    name: 'Mangue Splash',
+    description: 'Rhum blanc, purée de mangue, jus d\'orange, menthe',
+    price: '10 000 F CFA',
+  },
+];
+
+export const cocktailsSignature: MenuItem[] = [
+  {
+    name: 'King Aqua Spécial',
+    description: 'La création exclusive du King Aqua Lounge',
+    price: '10 000 F CFA',
+    tag: 'Signature',
+  },
+  {
+    name: 'Lounge Night',
+    description: 'Cocktail mystérieux aux saveurs nocturnes',
+    price: '10 000 F CFA',
+    tag: 'Signature',
+  },
+  {
+    name: 'Cocktail King Aqua',
+    description: 'Le symbole du King Aqua Lounge',
+    price: '10 000 F CFA',
+    tag: 'Signature',
+  },
+];
+
+export const cocktailsSansAlcool: MenuItem[] = [
+  {
+    name: 'Virgin Mojito',
+    description: 'Menthe fraîche, citron vert, sucre, eau gazeuse',
+    price: '5 000 F CFA',
+  },
+  {
+    name: 'Cocktail Royal',
+    description: 'Grenadine, jus d\'orange, eau gazeuse',
+    price: '5 000 F CFA',
+  },
+  {
+    name: 'Fresh Ginger',
+    description: 'Gingembre frais, citron, miel, eau gazeuse',
+    price: '5 000 F CFA',
+  },
+  {
+    name: 'Smoothie Tropical',
+    description: 'Mangue, ananas, banane, lait de coco',
+    price: '5 000 F CFA',
+  },
+  {
+    name: 'Banana au lait',
+    description: 'Banane fraîche, lait, sucre vanillé',
+    price: '5 000 F CFA',
+  },
+  {
+    name: 'Jus naturel d\'ananas',
+    description: 'Pur jus d\'ananas frais pressé',
     price: '5 000 F CFA',
   },
 ];
