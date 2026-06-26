@@ -12,7 +12,7 @@ const features = [
 export default function AboutSection() {
   return (
     <section
-      className="bg-white py-20 lg:py-28"
+      className="bg-[var(--color-cream)] py-20 lg:py-28"
       id="a-propos"
       aria-labelledby="about-title"
     >
@@ -30,12 +30,6 @@ export default function AboutSection() {
                 loading="lazy"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-            </div>
-
-            {/* Badge flottant */}
-            <div className="absolute -bottom-5 right-0 sm:-right-5 lg:-right-6 bg-[oklch(8.5%_0_0)] text-white rounded-xl px-5 py-4 shadow-xl border border-[var(--color-gold)]/20">
-              <div className="font-serif text-4xl text-[var(--color-gold)] font-light leading-none">10</div>
-              <div className="text-white/60 text-xs mt-1 leading-tight">ans<br />d&apos;excellence</div>
             </div>
 
             {/* Cadre doré */}

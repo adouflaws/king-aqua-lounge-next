@@ -23,14 +23,21 @@ import {
 } from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: 'La Carte — King Aqua Lounge, Grillades & Restaurant à Baco-Djicoroni, Bamako',
+  title: 'Menu — Grillades, Cocktails & Brochettes | King Aqua Lounge',
   description:
-    'Découvrez la carte officielle du King Aqua Lounge à Baco-Djicoroni, Bamako : entrées, grillades, brochettes, pizzas, fast-food, desserts, cocktails et boissons.',
+    'Carte du King Aqua Lounge à Baco-Djicoroni, Bamako : grillades, brochettes, pizzas, fast-food, desserts, cocktails et boissons. Ouvert 7j/7, 12h–04h.',
   alternates: { canonical: 'https://www.king-aqualounge.com/menu' },
   openGraph: {
-    title: 'La Carte — King Aqua Lounge à Baco-Djicoroni',
-    description: 'Entrées, grillades, brochettes, pizzas, cocktails et desserts au King Aqua Lounge, Baco-Djicoroni Bamako.',
+    title: 'Menu — Grillades, Cocktails & Brochettes | King Aqua Lounge',
+    description: 'Grillades, brochettes, pizzas, cocktails et desserts au King Aqua Lounge, Baco-Djicoroni Bamako.',
     url: 'https://www.king-aqualounge.com/menu',
+    images: [{ url: '/images/og-image.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Menu — King Aqua Lounge, Bamako',
+    description: 'Grillades, brochettes, cocktails et desserts à Baco-Djicoroni, Bamako.',
+    images: [{ url: '/images/og-image.jpg', alt: 'Menu King Aqua Lounge — Restaurant à Baco-Djicoroni, Bamako' }],
   },
 };
 
@@ -120,10 +127,17 @@ export default function MenuPage() {
             url: 'https://www.king-aqualounge.com',
             servesCuisine: ['Grillades', 'Cuisine malienne', 'Pizza', 'Cocktails', 'Fast-Food'],
             hasMenu: 'https://www.king-aqualounge.com/menu',
+            openingHours: 'Mo-Su 12:00-04:00',
             openingHoursSpecification: [
               {
                 '@type': 'OpeningHoursSpecification',
-                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                opens: '12:00',
+                closes: '04:00',
+              },
+              {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: ['Saturday', 'Sunday'],
                 opens: '12:00',
                 closes: '04:00',
               },

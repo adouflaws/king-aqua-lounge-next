@@ -1,165 +1,123 @@
 'use client';
 
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
+import { MessageCircle } from 'lucide-react';
 
-type Status = 'idle' | 'loading' | 'success' | 'error';
+const WHATSAPP_NUMBER = '22377777477';
+
+const SUBJECTS = [
+  { value: '', label: 'Sélectionner' },
+  { value: 'Réservation de table', label: 'Réservation de table' },
+  { value: 'Événement privé', label: 'Événement privé' },
+  { value: 'Groupe (+8 personnes)', label: 'Groupe (+8 personnes)' },
+  { value: 'Renseignements & disponibilités', label: 'Renseignements & disponibilités' },
+  { value: 'Autre demande', label: 'Autre demande' },
+];
 
 export default function ContactForm() {
-  const [status, setStatus] = useState<Status>('idle');
+  const [name, setName] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setStatus('loading');
 
-    const form = e.currentTarget;
-    const data = new FormData(form);
+    const lines = [
+      'Bonjour King Aqua Lounge !',
+      '',
+      `Nom : ${name}`,
+      subject ? `Sujet : ${subject}` : '',
+      '',
+      message,
+    ].filter((line) => line !== undefined);
 
-    try {
-      const res = await fetch('https://formspree.io/f/xjgjkqpr', {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      });
-
-      if (res.ok) {
-        setStatus('success');
-        form.reset();
-      } else {
-        setStatus('error');
-      }
-    } catch {
-      setStatus('error');
-    }
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
   }
+
+  const inputClass =
+    'w-full px-4 py-3 rounded-lg border border-[var(--color-gold)]/20 bg-[var(--color-cream)] text-[oklch(12%_0.005_60)] placeholder-[var(--color-text-muted-kal)]/50 text-sm focus:outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]/30 transition-all';
+
+  const labelClass =
+    'block text-xs tracking-widest uppercase text-[oklch(12%_0.005_60)] mb-2 font-medium';
+
+  const canSubmit = name.trim().length > 0 && message.trim().length > 0;
 
   return (
     <div className="bg-white rounded-2xl p-8 border border-[var(--color-gold)]/10 shadow-sm">
-      <h2 className="font-serif text-2xl text-[oklch(12%_0.005_60)] mb-2">
-        Nous écrire
-      </h2>
+      <div className="flex items-center gap-3 mb-2">
+        <div className="w-8 h-8 rounded-full bg-[oklch(48%_0.18_145)]/10 flex items-center justify-center shrink-0">
+          <MessageCircle size={15} className="text-[oklch(48%_0.18_145)]" strokeWidth={1.5} />
+        </div>
+        <h2 className="font-serif text-2xl text-[oklch(12%_0.005_60)]">Nous écrire</h2>
+      </div>
       <p className="text-[var(--color-text-muted-kal)] text-sm mb-7">
-        Pour un événement privé, un groupe ou toute autre demande.
+        Remplissez le formulaire — vous serez redirigé vers WhatsApp pour envoyer votre message.
       </p>
 
-      <form
-        onSubmit={handleSubmit}
-        id="contactForm"
-        noValidate
-        aria-label="Formulaire de contact"
-        className="space-y-5"
-      >
-        {/* Champs Formspree */}
-        <input type="hidden" name="_subject" value="Nouvelle demande — King Aqua Lounge" />
-        <input type="hidden" name="_language" value="fr" />
-        <input type="text" name="_gotcha" className="hidden" />
-
+      <form onSubmit={handleSubmit} noValidate aria-label="Formulaire de contact WhatsApp" className="space-y-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {/* Nom */}
           <div>
-            <label
-              htmlFor="c-name"
-              className="block text-xs tracking-widest uppercase text-[oklch(12%_0.005_60)] mb-2 font-medium"
-              style={{ letterSpacing: '0.12em' }}
-            >
+            <label htmlFor="c-name" className={labelClass} style={{ letterSpacing: '0.12em' }}>
               Nom complet
             </label>
             <input
               type="text"
               id="c-name"
-              name="name"
-              placeholder="Jean Dupont…"
+              placeholder="Votre nom…"
               autoComplete="name"
               required
-              className="w-full px-4 py-3 rounded-lg border border-[var(--color-gold)]/20 bg-[var(--color-cream)] text-[oklch(12%_0.005_60)] placeholder-[var(--color-text-muted-kal)]/50 text-sm focus:outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]/30 transition-all"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className={inputClass}
             />
           </div>
 
-          {/* Email */}
           <div>
-            <label
-              htmlFor="c-email"
-              className="block text-xs tracking-widest uppercase text-[oklch(12%_0.005_60)] mb-2 font-medium"
-              style={{ letterSpacing: '0.12em' }}
-            >
-              Email
+            <label htmlFor="c-subject" className={labelClass} style={{ letterSpacing: '0.12em' }}>
+              Sujet
             </label>
-            <input
-              type="email"
-              id="c-email"
-              name="email"
-              placeholder="jean@email.com…"
-              autoComplete="email"
-              spellCheck={false}
-              required
-              className="w-full px-4 py-3 rounded-lg border border-[var(--color-gold)]/20 bg-[var(--color-cream)] text-[oklch(12%_0.005_60)] placeholder-[var(--color-text-muted-kal)]/50 text-sm focus:outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]/30 transition-all"
-            />
+            <select
+              id="c-subject"
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+              className={`${inputClass} appearance-none`}
+            >
+              {SUBJECTS.map((s) => (
+                <option key={s.value} value={s.value}>{s.label}</option>
+              ))}
+            </select>
           </div>
         </div>
 
-        {/* Sujet */}
         <div>
-          <label
-            htmlFor="c-subject"
-            className="block text-xs tracking-widest uppercase text-[oklch(12%_0.005_60)] mb-2 font-medium"
-            style={{ letterSpacing: '0.12em' }}
-          >
-            Sujet
-          </label>
-          <select
-            id="c-subject"
-            name="subject"
-            required
-            className="w-full px-4 py-3 rounded-lg border border-[var(--color-gold)]/20 bg-[var(--color-cream)] text-[oklch(12%_0.005_60)] text-sm focus:outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]/30 transition-all appearance-none"
-          >
-            <option value="">Sélectionner</option>
-            <option value="renseignements">Renseignements &amp; disponibilités</option>
-            <option value="event">Événement privé</option>
-            <option value="groupe">Groupe (+8 personnes)</option>
-            <option value="autre">Autre demande</option>
-          </select>
-        </div>
-
-        {/* Message */}
-        <div>
-          <label
-            htmlFor="c-message"
-            className="block text-xs tracking-widest uppercase text-[oklch(12%_0.005_60)] mb-2 font-medium"
-            style={{ letterSpacing: '0.12em' }}
-          >
+          <label htmlFor="c-message" className={labelClass} style={{ letterSpacing: '0.12em' }}>
             Votre message
           </label>
           <textarea
             id="c-message"
-            name="message"
             placeholder="Décrivez votre demande ici…"
             required
             rows={5}
-            className="w-full px-4 py-3 rounded-lg border border-[var(--color-gold)]/20 bg-[var(--color-cream)] text-[oklch(12%_0.005_60)] placeholder-[var(--color-text-muted-kal)]/50 text-sm focus:outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]/30 transition-all resize-none"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className={`${inputClass} resize-none`}
           />
         </div>
 
-        {/* Submit */}
-        <Button
+        <button
           type="submit"
-          disabled={status === 'loading'}
-          className="w-full bg-[var(--color-gold)] text-[oklch(8.5%_0_0)] hover:bg-[var(--color-gold-light)] font-semibold tracking-widest uppercase text-xs py-3 rounded-full transition-all duration-300 disabled:opacity-60"
+          disabled={!canSubmit}
+          className="w-full inline-flex items-center justify-center gap-2 bg-[oklch(48%_0.18_145)] text-white hover:bg-[oklch(43%_0.18_145)] font-semibold tracking-widest uppercase text-xs py-3.5 rounded-full transition-[background-color] duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           style={{ letterSpacing: '0.15em' }}
         >
-          {status === 'loading' ? 'Envoi en cours…' : 'Envoyer le message'}
-        </Button>
+          <MessageCircle size={14} strokeWidth={2} />
+          Envoyer sur WhatsApp
+        </button>
 
-        {/* Feedback */}
-        {status === 'success' && (
-          <p className="text-green-600 text-sm font-medium text-center" role="alert">
-            ✓ Message envoyé ! Nous vous répondrons sous 24h.
-          </p>
-        )}
-        {status === 'error' && (
-          <p className="text-red-600 text-sm font-medium text-center" role="alert">
-            Une erreur est survenue. Veuillez réessayer ou nous appeler directement.
-          </p>
-        )}
+        <p className="text-[var(--color-text-muted-kal)] text-xs text-center">
+          Vous serez redirigé vers WhatsApp pour confirmer l&apos;envoi.
+        </p>
       </form>
     </div>
   );

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     'King Aqua Lounge à Baco-Djicoroni, Bamako : restaurant ouvert 7j/7 de 12h à 04h — grillades, jet ski, balade en bateau et billard au bord du fleuve Niger.',
   keywords:
-    'activités Bamako, que faire à Bamako, loisirs Bamako, billard Bamako, billard Baco-Djicoroni, salle de billard Bamako, jet ski Bamako, balade bateau Bamako, activités bord du fleuve Niger, restaurant activités Bamako, sortie Bamako, grillades Bamako, restaurant Baco-Djicoroni, King Aqua Lounge, réservation Bamako',
+    'activités Bamako, billard Bamako, jet ski Bamako, restaurant Baco-Djicoroni, King Aqua Lounge, grillades Bamako, sortie Bamako, loisirs Bamako',
   robots: { index: true, follow: true },
   alternates: { canonical: 'https://www.king-aqualounge.com/' },
   openGraph: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'King Aqua Lounge — Restaurant & Loisirs à Baco-Djicoroni',
     description: 'Grillades, jet ski, bateau et billard au bord du fleuve à Baco-Djicoroni, Bamako',
-    images: ['/images/og-image.jpg'],
+    images: [{ url: '/images/og-image.jpg', alt: 'King Aqua Lounge — Restaurant et loisirs au bord du fleuve Niger à Bamako' }],
   },
 };
 
@@ -50,13 +50,29 @@ export default function RootLayout({
               url: 'https://www.king-aqualounge.com',
               inLanguage: 'fr',
               description: 'Restaurant, grillades et loisirs à Baco-Djicoroni, Bamako — billard, jet ski, balade en bateau au bord du fleuve Niger.',
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: {
+                  '@type': 'EntryPoint',
+                  urlTemplate: 'https://www.king-aqualounge.com/menu?q={search_term_string}',
+                },
+                'query-input': 'required name=search_term_string',
+              },
             }),
           }}
         />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Raleway:wght@300;400;500;600&display=swap"
+          as="style"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Raleway:wght@300;400;500;600&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body>
         <a href="#main-content" className="skip-link">

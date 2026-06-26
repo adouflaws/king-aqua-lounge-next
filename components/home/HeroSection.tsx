@@ -123,23 +123,6 @@ export default function HeroSection() {
               </Link>
             </div>
 
-            {/* Trust metrics */}
-            <div className="flex flex-row flex-wrap items-center gap-5 sm:gap-6">
-              <div className="text-center">
-                <div className="text-[var(--color-gold)] font-serif text-2xl font-semibold">10+</div>
-                <div className="text-white/40 text-xs tracking-wide mt-0.5">Ans d&apos;expérience</div>
-              </div>
-              <div className="hidden sm:block h-8 w-px bg-[var(--color-gold)]/25" aria-hidden="true" />
-              <div className="text-center">
-                <div className="text-[var(--color-gold)] font-serif text-2xl font-semibold">★ 4.9</div>
-                <div className="text-white/40 text-xs tracking-wide mt-0.5">Google Reviews</div>
-              </div>
-              <div className="hidden sm:block h-8 w-px bg-[var(--color-gold)]/25" aria-hidden="true" />
-              <div className="text-center">
-                <div className="text-[var(--color-gold)] font-serif text-2xl font-semibold">120+</div>
-                <div className="text-white/40 text-xs tracking-wide mt-0.5">Références vins</div>
-              </div>
-            </div>
           </div>
 
           {/* ── Image hero — MOBILE UNIQUEMENT (<md) ── */}
@@ -167,12 +150,6 @@ export default function HeroSection() {
                   style={{ opacity: 0.9 }}
                 />
               </div>
-              {/* Badge rating */}
-              <div className="absolute bottom-10 left-2 sm:-left-8 bg-white rounded-xl px-4 py-3 shadow-2xl z-10">
-                <div className="text-[var(--color-gold)] text-sm tracking-widest">★★★★★</div>
-                <div className="text-[oklch(12%_0.005_60)] text-xs font-semibold mt-0.5">Avis clients</div>
-                <div className="text-[oklch(45%_0.02_60)] text-xs">+480 avis Google</div>
-              </div>
             </div>
           </div>
 
@@ -182,12 +159,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Badge rating flottant — DESKTOP UNIQUEMENT (md+) */}
-      <div className="hidden md:block absolute bottom-20 right-6 lg:right-12 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-2xl z-10">
-        <div className="text-[var(--color-gold)] text-sm tracking-widest">★★★★★</div>
-        <div className="text-[oklch(12%_0.005_60)] text-xs font-semibold mt-0.5">Avis clients</div>
-        <div className="text-[oklch(45%_0.02_60)] text-xs">+480 avis Google</div>
-      </div>
 
       {/* Vague basse */}
       <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">

@@ -3,17 +3,17 @@ import { Separator } from '@/components/ui/separator';
 
 const eventTypes = [
   {
-    icon: '💍',
+    num: '01',
     title: 'Célébrations & Anniversaires',
     desc: "Dîner romantique, anniversaire, demande en mariage — chaque instant rendu inoubliable.",
   },
   {
-    icon: '💼',
+    num: '02',
     title: "Dîners d'Affaires",
     desc: "Salon privé, équipement audiovisuel, service discret — le cadre idéal pour vos rencontres professionnelles.",
   },
   {
-    icon: '🥂',
+    num: '03',
     title: 'Privatisation Totale',
     desc: "Soirée de gala, cocktail dînatoire, réception — nous mettons tout le restaurant à votre disposition.",
   },
@@ -29,29 +29,44 @@ export default function EventsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* Visuel */}
+          {/* Visuel éditorial */}
           <div className="relative reveal-up">
             <div
               className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[oklch(8.5%_0_0)]"
               role="img"
-              aria-label="Salle privatisée du King Aqua Lounge pour un événement"
+              aria-label="Espace privatisable du King Aqua Lounge pour événements"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-gold)]/10 to-[oklch(8.5%_0_0)]" />
+              {/* Grille dorée subtile */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: `linear-gradient(oklch(72% 0.135 78 / 0.04) 1px, transparent 1px), linear-gradient(90deg, oklch(72% 0.135 78 / 0.04) 1px, transparent 1px)`,
+                  backgroundSize: '44px 44px',
+                }}
+              />
+              {/* Dégradé central */}
+              <div className="absolute inset-0 bg-radial-[ellipse_at_center] from-[var(--color-gold)]/8 via-transparent to-transparent" />
+
+              {/* Cadres de coin */}
+              <div className="absolute top-7 left-7 w-10 h-10 border-t border-l border-[var(--color-gold)]/25" aria-hidden="true" />
+              <div className="absolute top-7 right-7 w-10 h-10 border-t border-r border-[var(--color-gold)]/25" aria-hidden="true" />
+              <div className="absolute bottom-7 left-7 w-10 h-10 border-b border-l border-[var(--color-gold)]/25" aria-hidden="true" />
+              <div className="absolute bottom-7 right-7 w-10 h-10 border-b border-r border-[var(--color-gold)]/25" aria-hidden="true" />
+
+              {/* Contenu central */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="font-serif text-7xl text-[var(--color-gold)]/20">◆</div>
-                  <p className="text-white/20 text-sm mt-4 tracking-widest uppercase">Espace privatisable</p>
+                <div className="text-center px-8">
+                  <p className="font-serif text-[5rem] leading-none text-[var(--color-gold)]/12 select-none">K</p>
+                  <div className="flex items-center justify-center gap-3 mt-4">
+                    <span className="w-8 h-px bg-[var(--color-gold)]/25" />
+                    <p className="text-[var(--color-gold)]/40 text-[0.6rem] tracking-[0.35em] uppercase">
+                      Espace privatisable
+                    </p>
+                    <span className="w-8 h-px bg-[var(--color-gold)]/25" />
+                  </div>
+                  <p className="text-white/15 text-xs mt-3 tracking-widest uppercase">King Aqua Lounge</p>
                 </div>
               </div>
-            </div>
-
-            {/* Badge convives */}
-            <div
-              className="absolute -top-4 -right-4 sm:-right-6 bg-[var(--color-gold)] text-[oklch(8.5%_0_0)] rounded-xl px-5 py-4 shadow-xl"
-              aria-label="Jusqu'à 80 convives"
-            >
-              <div className="font-serif text-4xl font-semibold leading-none">80</div>
-              <div className="text-[oklch(8.5%_0_0)]/70 text-xs mt-1 leading-tight">Convives<br />max</div>
             </div>
           </div>
 
@@ -84,8 +99,8 @@ export default function EventsSection() {
               {eventTypes.map((evt, i) => (
                 <div key={evt.title}>
                   <div className="flex items-start gap-4">
-                    <span className="text-2xl leading-none mt-0.5" aria-hidden="true">
-                      {evt.icon}
+                    <span className="font-serif text-xs text-[var(--color-gold)]/60 tracking-widest mt-0.5 shrink-0 w-6" aria-hidden="true">
+                      {evt.num}
                     </span>
                     <div>
                       <p className="font-semibold text-[oklch(12%_0.005_60)] text-sm mb-1">

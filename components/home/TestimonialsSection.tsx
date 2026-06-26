@@ -67,11 +67,6 @@ export default function TestimonialsSection() {
                   i >= 2 ? 'hidden md:block' : i >= 1 ? 'hidden sm:block' : ''
                 )}
               >
-                {/* Étoiles */}
-                <div className="text-[var(--color-gold)] text-base mb-4">
-                  {'★'.repeat(t.rating)}
-                </div>
-
                 {/* Texte */}
                 <blockquote className="text-[var(--color-text-muted-kal)] leading-relaxed text-sm italic font-serif text-base mb-6">
                   &ldquo;{t.text}&rdquo;

@@ -7,11 +7,12 @@ import MenuPreviewSection from '@/components/home/MenuPreviewSection';
 import GallerySection from '@/components/home/GallerySection';
 import EventsSection from '@/components/home/EventsSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
+import FaqSection from '@/components/home/FaqSection';
 
 export const metadata: Metadata = {
-  title: 'King Aqua Lounge — Activités & Restaurant à Bamako | Billard, Jet Ski, Grillades',
+  title: 'King Aqua Lounge — Billard, Jet Ski & Grillades à Bamako',
   description:
-    'Meilleure adresse pour vos activités à Bamako : billard, jet ski, balade en bateau et grillades au bord du fleuve Niger. King Aqua Lounge à Baco-Djicoroni — sortie et loisirs à Bamako.',
+    'Billard, jet ski, balade en bateau et grillades au bord du fleuve Niger — King Aqua Lounge à Baco-Djicoroni, Bamako. Ouvert 7j/7, 12h–04h.',
   alternates: { canonical: 'https://www.king-aqualounge.com/' },
 };
 
@@ -30,7 +31,7 @@ export default function HomePage() {
               'Activités et restaurant à Bamako : billard, jet ski, balade en bateau et grillades au bord du fleuve Niger à Baco-Djicoroni. La meilleure sortie loisirs à Bamako.',
             url: 'https://www.king-aqualounge.com',
             telephone: '+223-77-77-74-77',
-            email: 'adouflaws@gmail.com',
+            email: 'kingaqualounge1@gmail.com',
             address: {
               '@type': 'PostalAddress',
               streetAddress: 'Baco-Djicoroni',
@@ -42,16 +43,22 @@ export default function HomePage() {
               latitude: '12.600141253488838',
               longitude: '-8.032088474221514',
             },
+            openingHours: 'Mo-Su 12:00-04:00',
             openingHoursSpecification: [
               {
                 '@type': 'OpeningHoursSpecification',
-                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                opens: '12:00',
+                closes: '04:00',
+              },
+              {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: ['Saturday', 'Sunday'],
                 opens: '12:00',
                 closes: '04:00',
               },
             ],
             servesCuisine: ['Grillades', 'Cuisine africaine', 'Cocktails'],
-            priceRange: '€€',
             aggregateRating: {
               '@type': 'AggregateRating',
               ratingValue: '4.9',
@@ -65,7 +72,6 @@ export default function HomePage() {
               { '@type': 'LocationFeatureSpecification', name: 'Activités nautiques', value: true },
               { '@type': 'LocationFeatureSpecification', name: 'Loisirs Bamako', value: true },
             ],
-            keywords: 'activités Bamako, billard Bamako, billard Baco-Djicoroni, jet ski Bamako, que faire à Bamako, loisirs Bamako, sortie Bamako, grillades Bamako',
             hasMap: 'https://maps.google.com/?q=King+Aqua+Lounge+Baco-Djicoroni+Bamako',
             image: 'https://www.king-aqualounge.com/images/og-image.jpg',
             sameAs: [
@@ -84,34 +90,66 @@ export default function HomePage() {
             mainEntity: [
               {
                 '@type': 'Question',
-                name: 'Quels sont les horaires du King Aqua Lounge ?',
+                name: 'Quelles activités propose King Aqua Lounge à Bamako ?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'King Aqua Lounge est ouvert 7 jours sur 7, de 12h00 à 04h00 du matin.',
+                  text: 'King Aqua Lounge propose du jet ski sur le fleuve Niger, des balades en bateau, une salle de billard, des grillades à la braise et des cocktails — tout au bord du fleuve à Baco-Djicoroni, Bamako. Ouvert 7j/7 de 12h à 04h.',
                 },
               },
               {
                 '@type': 'Question',
-                name: 'Quelles activités propose King Aqua Lounge ?',
+                name: 'Où faire du jet ski à Bamako ?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'King Aqua Lounge propose du billard, du jet ski, des balades en bateau sur le fleuve Niger, ainsi qu\'un restaurant avec grillades et cocktails.',
+                  text: 'King Aqua Lounge est l\'adresse de référence pour le jet ski à Bamako. Situé à Baco-Djicoroni au bord du fleuve Niger, nous proposons des sessions encadrées. Contactez-nous au +223 77 77 74 77 pour réserver.',
                 },
               },
               {
                 '@type': 'Question',
-                name: 'Comment réserver une table ou une activité au King Aqua Lounge ?',
+                name: 'Que faire à Bamako le week-end ?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Vous pouvez réserver en appelant le +223 77 77 74 77, par email à adouflaws@gmail.com, ou via le formulaire de contact sur notre site.',
+                  text: 'King Aqua Lounge est la sortie idéale le week-end à Bamako : jet ski, balade en bateau sur le fleuve Niger, billard, grillades et cocktails dans un cadre unique à Baco-Djicoroni. Ouvert samedi et dimanche de 12h à 04h.',
                 },
               },
               {
                 '@type': 'Question',
-                name: 'Où se trouve King Aqua Lounge à Bamako ?',
+                name: 'Où jouer au billard à Bamako ?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'King Aqua Lounge est situé à Baco-Djicoroni, au bord du fleuve Niger, à Bamako, Mali.',
+                  text: 'La salle de billard de King Aqua Lounge à Baco-Djicoroni est ouverte 7j/7. Tables professionnelles, ambiance lounge et cocktails — la meilleure adresse pour le billard à Bamako.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Où manger des grillades à Bamako ?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'King Aqua Lounge propose les meilleures grillades à Bamako : viandes et poissons braisés à la braise, marinades maison et épices du terroir malien, servis au bord du fleuve Niger à Baco-Djicoroni.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Où faire une balade en bateau sur le fleuve Niger à Bamako ?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Depuis King Aqua Lounge à Baco-Djicoroni, Bamako, vous embarquez pour une balade en bateau sur le fleuve Niger. Couchers de soleil exceptionnels, excursions privatisables sur demande.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Peut-on privatiser une salle pour un événement à Bamako ?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Oui. King Aqua Lounge propose la privatisation totale ou partielle pour anniversaires, mariages, événements d\'entreprise et soirées privées à Bamako. Contactez-nous pour un devis sur mesure.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Quels sont les horaires et l\'adresse de King Aqua Lounge ?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'King Aqua Lounge est situé à Baco-Djicoroni, au bord du fleuve Niger, à Bamako (Mali). Ouvert 7 jours sur 7 de 12h00 à 04h00 du matin. Tél. : +223 77 77 74 77.',
                 },
               },
             ],
@@ -126,10 +164,10 @@ export default function HomePage() {
       <GallerySection />
       <EventsSection />
       <TestimonialsSection />
+      <FaqSection />
 
       {/* FAB flottant */}
       <Link href="/contact" className="fab" aria-label="Nous contacter">
-        <span aria-hidden="true">✦</span>
         Contact
       </Link>
     </>
